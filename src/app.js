@@ -1,8 +1,9 @@
 import express from "express";
 import cors from  "cors";
-import 'dotenv/config';
 import logger from "./utils/logger";
-import res from "express/lib/response";
+import "dotenv/config";
+import {connect} from "./utils/database.connection";
+
 
 
 const app  = express();
@@ -18,10 +19,8 @@ const PORT = process.env.PORT || "8090";
  });
 
  app.listen(PORT, () => {
-   logger.info("Lahiru Gayashan Loging the sysytem");
-   logger.error("This is error");
-   logger.warn("This is warning");
-   console.log(' server is up and  running on PORT ${PORT 8090}');
+   logger.info(' server is up and  running on PORT ${PORT}');
+   connect();
  } );
 
 
