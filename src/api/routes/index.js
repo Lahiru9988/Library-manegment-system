@@ -14,11 +14,12 @@ const routesInit = (app,passport) => {
      console.log("User is authenticated");
      }
   );
-};
 
-app.get("/test", authenticate,(req, res) => {
+   app.get("/test", authenticate,(req, res) => {
      res.send("<h3>User is authenticated</h3>");
-});
+   });
+
+};
 
 
 export{routesInit};
